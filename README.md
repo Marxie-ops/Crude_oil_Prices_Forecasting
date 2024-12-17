@@ -1,4 +1,4 @@
-# Documentation: Crude Oil Price Forecasting Forecasting with Prophet Using External Regressors
+# Crude Oil Price Forecasting with Prophet Using External Regressors
 ## ***Introduction***
 This project aims to forecast the future price movements of crude oil using historical data. We leverage Yahoo Finance (yfinance) to obtain 10 years of crude oil price data, clean and analyze the data, and ultimately use the Prophet model by Facebook for forecasting.
 
