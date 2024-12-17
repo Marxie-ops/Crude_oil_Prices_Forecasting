@@ -1,4 +1,4 @@
-# Documentation: Crude Oil Price Forecasting Using Prophet
+# Documentation: Crude Oil Price Forecasting Forecasting with Prophet Using External Regressors
 ## ***Introduction***
 This project aims to forecast the future price movements of crude oil using historical data. We leverage Yahoo Finance (yfinance) to obtain 10 years of crude oil price data, clean and analyze the data, and ultimately use the Prophet model by Facebook for forecasting.
 
@@ -104,7 +104,57 @@ Energy Policies: Government regulations, such as subsidies, taxes, and renewable
 * Market Sentiment:
 Investor Confidence: Financial market volatility and global economic uncertainty impact oil price fluctuations, especially in response to political events such as presidential elections and international trade negotiations.
  Performed correlation to see which regressors had alot of impact on the close prices and remained with just two:
+
 ***Strong Positive Correlations:***
 * *Biden Policy Shift (0.77):* The positive correlation between Biden's policy changes and oil prices suggests that significant policy shifts, particularly those related to energy and environmental regulations, are likely to influence crude oil prices. For instance, the shift towards renewable energy or changes in oil extraction and production regulations under his administration may cause market reactions, driving prices up.
+* 
 ***Strong Negative Correlations:***
 *Shale Oil Impact (-0.49):** The negative correlation between shale oil production and oil prices indicates that as the U.S. expands its shale oil production (particularly in the 2015-2019 period), oil prices tend to decrease. The increase in domestic oil supply from shale production likely exerts downward pressure on global prices.
+
+## ***Building The Prophet Model***
+* **Key Steps** 
+***Data Splitting***
+
+* Training Data: The first 8 years of data (2015–2022) are used to train the model.
+* Forecast Data: Data beyond the 8-year cutoff point is used for testing and forecasting.
+A training_end_date is calculated dynamically using the pd.DateOffset() function.
+
+***Defining Regressors***
+
+* shale_oil_impact: A binary regressor (1/0) that captures the impact of U.S. shale oil production between 2015 and 2019.
+* biden_policy_shift: A binary regressor (1/0) that accounts for the impact of policies during U.S. President Joe Biden’s administration from 2021 to 2024.
+These regressors are included using the model.add_regressor() function in Prophet.
+
+## ***Model Training***
+
+The Prophet model is fitted to the training data, which includes both the time series values (ds, y) and the defined regressors.
+Forecasting
+
+A future dataframe is created using make_future_dataframe() for the specified forecast period.
+
+The regressors (shale_oil_impact and biden_policy_shift) are defined in the future dataframe as binary values based on specific date ranges.
+
+## ***Model Evaluation***
+
+The model performance metrics provided suggest that the model is performing quite well based on several key evaluation metrics:
+
+* MAE (Mean Absolute Error): 40.77
+Interpretation: The average absolute difference between the predicted and actual values is approximately 40.77. Depending on the scale of your data (e.g., if the target variable is in the range of hundreds or thousands), this value could be considered acceptable or high. A lower MAE is generally better.
+
+* RMSE (Root Mean Squared Error): 6.39
+Interpretation: RMSE is a common metric to assess model accuracy, and it penalizes larger errors more due to the squaring of the residuals. A lower RMSE is preferable, and the fact that the RMSE is much smaller than the MAE suggests that there might not be many large prediction errors in your model, which is a positive sign. Given the context (whether the target values are large or small), this could indicate that your model is doing fairly well.
+
+* MAPE (Mean Absolute Percentage Error): 8.91%
+Interpretation: This is a very strong performance, as MAPE values under 10% are often seen as very good for many applications, particularly in time series forecasting. It suggests that, on average, your model's predictions are off by less than 9% from the actual values. This indicates the model is capturing the trend and seasonality in the data well.
+
+* R-squared (R²): 0.86
+Interpretation: R² indicates how well the model's predictions match the actual data. An R² value of 0.86 means that about 86% of the variance in the target variable is explained by your model. This is a strong result and suggests that the model is able to explain most of the variability in the data. An R² above 0.8 is generally considered good in many predictive modeling scenarios.
+
+* Accuracy: 91.09%
+Interpretation: An accuracy of 91.09% indicates that the model is correct approximately 91% of the time. This is a good result, especially for forecasting or regression tasks where exact matches are rare but the general trend is well-captured.
+
+## ***Conclusion:***
+
+***Overall Performance:***
+
+The model is performing well, as indicated by the low MAE and RMSE, as well as the high R² and accuracy. Interpretation: The model has a good balance between minimizing error and capturing the data's variability. MAPE being under 10% is excellent, which suggests it is effective for forecasting purposes. Next Steps: You could try to further fine-tune the model or explore additional features or algorithms to improve the performance slightly. However, based on the metrics, the model is already performing at a high level.
