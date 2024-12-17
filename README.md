@@ -52,9 +52,9 @@ A similar analysis is done for the Volume variable. It reveals the following:
 2015-2018: Stable volume with minor fluctuations.
 2018-2020: Increase in volume likely due to rising market uncertainty and trading activity during the pandemic.
 2020-2021: High trading volume persists due to continued volatility.
+
 ***Outlier Detection and Cleaning***
 Outliers in the Close prices are identified using z-scores. Prices beyond a threshold of 2.7 are considered outliers and removed:
-
 
 This results in a cleaner dataset with fewer extreme values that could skew the analysis.
 
