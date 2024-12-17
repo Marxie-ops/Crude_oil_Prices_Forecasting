@@ -63,3 +63,47 @@ Histograms and boxplots are used to compare the original and cleaned data distri
 
 
 These plots show how the Close and Volume values change over time, helping to visualize trends and anomalies.
+
+## ***Trend, Seasonal, and Residual Analysis of Crude Oil Prices (2015–2025)***
+Trend Component 
+The trend component shows the long-term direction of crude oil prices from 2015 to 2025. It reveals major structural movements over time:
+
+2015 to 2020: Crude oil prices fluctuate between 20 and 80 USD, reflecting normal market conditions.
+Mid-2020 Dip: A significant drop aligns with global COVID-19 lockdowns that reduced demand, caused supply chain disruptions, and led to oil production cutbacks.
+Post-2020 Recovery: Prices spike from 2021 to 2022 due to the recovery in demand, persistent supply chain issues, and geopolitical instability.
+Post-2022 Decline: Prices trend downward, influenced by changes in supply, inflation, and recession fears.
+Seasonal Component (Green Oscillations)
+The seasonal component captures the cyclical patterns inherent in the crude oil market. It highlights periodic fluctuations driven by regular supply and demand changes:
+
+Repeating Cycles: Clear seasonal spikes occur, often associated with summer driving demand and winter heating needs.
+Post-2022 Volatility: The seasonal volatility increases post-2022, likely due to supply chain disruptions and geopolitical risks, particularly the Russia-Ukraine war and OPEC+ policy changes.
+Consistent Seasonality: Despite shocks, predictable seasonal patterns persist, but changes in demand elasticity are evident.
+Residual Component (Red Noise)
+The residual component accounts for the "unexpected shocks" or anomalies not explained by the trend or seasonal components:
+
+Spikes (2015-2021): Significant volatility due to external factors like geopolitical conflicts (Middle East tensions, Libya), global events (COVID-19 pandemic), and market manipulations (OPEC+ decisions).
+2024 Impact: The residual component also captures market volatility linked to political shifts, such as U.S. President Joe Biden's resignation and reelection bid, which contributed to market speculation and price uncertainty.
+
+### ***Stationarity Check with Augmented Dickey-Fuller (ADF) Test***
+The Augmented Dickey-Fuller (ADF) test is used to check whether the time series data is stationary, which is essential for effective time series modeling. Stationarity means that the statistical properties of the series (e.g., mean, variance) do not change over time. Here's the result of the ADF test on the Close prices of crude oil:
+
+
+Since the test statistic does not fall below the critical value at the 5% significance level, the time series of crude oil prices is non-stationary.
+
+## ***Insights on Crude Oil Price Influences (2015–2025)***
+The fluctuations in crude oil prices from 2015 to 2025 have been significantly influenced by a range of external regressors. These include:
+
+* Geopolitical Factors:
+Tensions and Conflicts: Middle East conflicts, the Russia-Ukraine war, and instability in Libya have disrupted supply and added uncertainty to oil prices.
+Sanctions: Sanctions on countries like Iran, Venezuela, and Russia have restricted oil supply and contributed to price volatility.
+* Economic Factors:
+Global Economic Growth: The growth or slowdown of major economies directly impacts oil demand.
+Monetary Policies: Central bank interest rate changes influence investment and currency markets, which can affect oil prices.
+Inflation and Exchange Rates: Currency fluctuations, particularly in oil-producing nations, and inflationary pressures play crucial roles in price movements.
+* Supply and Demand Shocks:
+OPEC+ Decisions: Adjustments to oil production by OPEC+ countries impact global supply.
+Natural Disasters and Political Instability: Disruptions such as hurricanes or pipeline damages create short-term price shocks.
+* Policy and Regulatory Factors:
+Energy Policies: Policies promoting renewable energy, energy efficiency standards, and subsidies for fossil fuels can directly affect the oil market.
+Market Sentiment:
+Investor Confidence: Global economic uncertainty, market sentiment, and speculation significantly impact oil price volatility, especially in reaction to major political events like the resignation or reelection of political leaders.
