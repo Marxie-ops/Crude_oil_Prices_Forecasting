@@ -14,7 +14,7 @@ This project aims to forecast the future price movements of crude oil using hist
 ***Data Collection***
 The dataset for crude oil prices is fetched using the yfinance library:
 Fetchs historical data of crude oil prices for the last 10 years. The data contains columns such as Open, High, Low, Close, Volume, Dividends, and Stock Splits.
-## EDA 
+## Exploratory Data Analysis (EDA)
 ***Data Inspection***
 Basic inspection of the data helps ensure its completeness and identify potential issues:
 Dividends and Stock Splits are generally empty in our dataset, which is typical for commodities like crude oil.
@@ -158,3 +158,6 @@ Interpretation: An accuracy of 91.09% indicates that the model is correct approx
 ***Overall Performance:***
 
 The model is performing well, as indicated by the low MAE and RMSE, as well as the high R² and accuracy. Interpretation: The model has a good balance between minimizing error and capturing the data's variability. MAPE being under 10% is excellent, which suggests it is effective for forecasting purposes. Next Steps: You could try to further fine-tune the model or explore additional features or algorithms to improve the performance slightly. However, based on the metrics, the model is already performing at a high level.
+
+## ***Saving and Loading the Model***
+To ensure reproducibility and efficiency, the trained Prophet model is saved and reloaded for future use.
