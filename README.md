@@ -60,8 +60,6 @@ This results in a cleaner dataset with fewer extreme values that could skew the 
 
 ***Visualizing the Cleaned Data***
 Histograms and boxplots are used to compare the original and cleaned data distributions:
-
-
 These plots show how the Close and Volume values change over time, helping to visualize trends and anomalies.
 
 ## ***Trend, Seasonal, and Residual Analysis of Crude Oil Prices (2015–2025)***
@@ -86,24 +84,27 @@ Spikes (2015-2021): Significant volatility due to external factors like geopolit
 
 ### ***Stationarity Check with Augmented Dickey-Fuller (ADF) Test***
 The Augmented Dickey-Fuller (ADF) test is used to check whether the time series data is stationary, which is essential for effective time series modeling. Stationarity means that the statistical properties of the series (e.g., mean, variance) do not change over time. Here's the result of the ADF test on the Close prices of crude oil:
-
-
 Since the test statistic does not fall below the critical value at the 5% significance level, the time series of crude oil prices is non-stationary.
 
-## ***Insights on Crude Oil Price Influences (2015–2025)***
-The fluctuations in crude oil prices from 2015 to 2025 have been significantly influenced by a range of external regressors. These include:
+## ***Key External Regressors Impacting Crude Oil Prices (2015–2025)***
+The fluctuations in crude oil prices have been significantly influenced by several external factors. These regressors include:
 
 * Geopolitical Factors:
-Tensions and Conflicts: Middle East conflicts, the Russia-Ukraine war, and instability in Libya have disrupted supply and added uncertainty to oil prices.
-Sanctions: Sanctions on countries like Iran, Venezuela, and Russia have restricted oil supply and contributed to price volatility.
+Tensions and Conflicts: Conflicts in the Middle East, the Russia-Ukraine war, and instability in Libya have disrupted supply and added uncertainty to oil prices.
+Sanctions: Sanctions on Iran, Venezuela, and Russia have led to a reduction in oil supply, causing volatility in prices.
 * Economic Factors:
-Global Economic Growth: The growth or slowdown of major economies directly impacts oil demand.
-Monetary Policies: Central bank interest rate changes influence investment and currency markets, which can affect oil prices.
-Inflation and Exchange Rates: Currency fluctuations, particularly in oil-producing nations, and inflationary pressures play crucial roles in price movements.
+Global Economic Growth: Changes in global economic growth, particularly in emerging markets, directly impact oil demand.
+Interest Rates and Inflation: Central bank monetary policies and inflation rates influence oil prices by affecting investment behavior and overall economic activity.
+Exchange Rates: Currency fluctuations, especially in oil-producing countries, impact the global oil market.
 * Supply and Demand Shocks:
-OPEC+ Decisions: Adjustments to oil production by OPEC+ countries impact global supply.
-Natural Disasters and Political Instability: Disruptions such as hurricanes or pipeline damages create short-term price shocks.
+OPEC+ Decisions: Changes in oil production targets by OPEC+ countries, such as production cuts, have caused significant price movements.
+Natural Disasters and Political Instability: Events like hurricanes, pipeline disruptions, and political instability in oil-producing regions have led to supply disruptions and price spikes.
 * Policy and Regulatory Factors:
-Energy Policies: Policies promoting renewable energy, energy efficiency standards, and subsidies for fossil fuels can directly affect the oil market.
-Market Sentiment:
-Investor Confidence: Global economic uncertainty, market sentiment, and speculation significantly impact oil price volatility, especially in reaction to major political events like the resignation or reelection of political leaders.
+Energy Policies: Government regulations, such as subsidies, taxes, and renewable energy investments, play a significant role in shaping oil market dynamics.
+* Market Sentiment:
+Investor Confidence: Financial market volatility and global economic uncertainty impact oil price fluctuations, especially in response to political events such as presidential elections and international trade negotiations.
+ Performed correlation to see which regressors had alot of impact on the close prices and remained with just two:
+***Strong Positive Correlations:***
+* *Biden Policy Shift (0.77):* The positive correlation between Biden's policy changes and oil prices suggests that significant policy shifts, particularly those related to energy and environmental regulations, are likely to influence crude oil prices. For instance, the shift towards renewable energy or changes in oil extraction and production regulations under his administration may cause market reactions, driving prices up.
+***Strong Negative Correlations:***
+*Shale Oil Impact (-0.49):** The negative correlation between shale oil production and oil prices indicates that as the U.S. expands its shale oil production (particularly in the 2015-2019 period), oil prices tend to decrease. The increase in domestic oil supply from shale production likely exerts downward pressure on global prices.
