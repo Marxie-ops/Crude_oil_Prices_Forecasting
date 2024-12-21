@@ -138,8 +138,9 @@ The regressors (shale_oil_impact and biden_policy_shift) are defined in the futu
 
 The model performance metrics provided suggest that the model is performing quite well based on several key evaluation metrics:
 
-* MAE (Mean Absolute Error): 40.77
-Interpretation: The average absolute difference between the predicted and actual values is approximately 40.77. Depending on the scale of your data (e.g., if the target variable is in the range of hundreds or thousands), this value could be considered acceptable or high. A lower MAE is generally better.
+* MSE (40.28): MSE penalizes larger errors more than MAE because it squares the differences. This is important when the cost of large errors is higher. The value of MSE gives an overall sense of how well the model is performing but is less interpretable on its own compared to MAE.
+* MAE (Mean Absolute Error): 4.82
+Interpretation: The average absolute difference between the predicted and actual values is approximately 4.82. Since the scale of my data (is between  −37− 126), this value could be considered acceptable since its slightly below the range of 5%-10%.
 
 * RMSE (Root Mean Squared Error): 6.39
 Interpretation: RMSE is a common metric to assess model accuracy, and it penalizes larger errors more due to the squaring of the residuals. A lower RMSE is preferable, and the fact that the RMSE is much smaller than the MAE suggests that there might not be many large prediction errors in your model, which is a positive sign. Given the context (whether the target values are large or small), this could indicate that your model is doing fairly well.
